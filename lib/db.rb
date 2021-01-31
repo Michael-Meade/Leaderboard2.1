@@ -11,7 +11,7 @@ class DB
         p c.check_username
 		# checks if check is set as true
 		if c.check_username.nil?
-			u = DBUsers.new(team_name, irn)
+            u = DBUsers.new(team_name, irn)
             # creates password & saves into db
             u.add_to_db
             user_db.execute( "select * from users where team_name='#{team_name}'" ) do |row|
@@ -24,7 +24,7 @@ class DB
             # The file has their team_name and thier randomly assigned password,
             # It does not have the IP of the gameplay server. You have to give it to the users
             # yourself. This is done to limit the exposure of the gameplay server. 
-			u.create_ouput
+            u.create_ouput
         else
             return false
 		end	
