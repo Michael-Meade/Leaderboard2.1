@@ -11,20 +11,20 @@ class DB
         p c.check_username
 		# checks if check is set as true
 		if c.check_username.nil?
-            u = DBUsers.new(team_name, irn)
-            # creates password & saves into db
-            u.add_to_db
-            user_db.execute( "select * from users where team_name='#{team_name}'" ) do |row|
-                @team_pass = row[3]
-            end
-            # logs into the game server and creates an the account on the machine
-            Users.new(team_name, @team_pass).run!
-            # Now we have to create the output 
-            # file. This is sent to the end user at the very end.
-            # The file has their team_name and thier randomly assigned password,
-            # It does not have the IP of the gameplay server. You have to give it to the users
-            # yourself. This is done to limit the exposure of the gameplay server. 
-            u.create_ouput
+                u = DBUsers.new(team_name, irn)
+                # creates password & saves into db
+                u.add_to_db
+                user_db.execute( "select * from users where team_name='#{team_name}'" ) do |row|
+                    @team_pass = row[3]
+                end
+                # logs into the game server and creates an the account on the machine
+                Users.new(team_name, @team_pass).run!
+                # Now we have to create the output 
+                # file. This is sent to the end user at the very end.
+                # The file has their team_name and thier randomly assigned password,
+                # It does not have the IP of the gameplay server. You have to give it to the users
+                # yourself. This is done to limit the exposure of the gameplay server. 
+                u.create_ouput
         else
             return false
 		end	
