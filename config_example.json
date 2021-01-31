@@ -1,0 +1,7 @@
+{ "signup":"true",
+  "api-key":"",
+  "alerts":true,
+  "ssh-ip":"",
+  "ssh-pass":"",
+  "ssh-file": ""
+}

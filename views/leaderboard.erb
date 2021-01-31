@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Blue vs. Blue</title>
+    <style>
+        #container {
+        	width: 800px; margin: 0 auto; height: 500px; position: relative;
+        }
+        #container form {
+        	position: absolute; top: 20%; left: 20%;
+        }
+        #container form p {
+        	padding: 0; margin: 0; color: #ffffff; font-size: 24px;
+        }
+        #container form input {
+        	padding: 10px;width: 180px;
+        }
+        body {
+        	background: #304254; position: relative; padding: 0; margin: 0;
+        }
+        #container form input[type=text] {
+        	padding:5px; border:2px solid #ccc; -webkit-border-radius: 5px; border-radius: 5px;
+        }
+        table, th, td { 
+        	border: 1px solid black; 
+        }
+        th, td { 
+        	padding: 15px;
+        }
+    </style>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+	<body>
+		<div id="page-wrap">
+			<div id="container-top">
+				<div id="container">
+					<table border = "3" bordercolor="black" style="color: white;" width="400" font-size:"90%" align="center">
+							<tr align="center">
+								<th>Score</th>
+								<th>Team Name</th>
+							</tr>
+							<% @r.each do |line| %>
+								<tr align="center">
+									<td> <%= line[1]%> </td>
+									<td> <%= line[0]%> </td>
+								</tr>
+							<% end %>
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

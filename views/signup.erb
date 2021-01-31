@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Blue vs. Blue</title>
+    <style>
+        #container {width: 800px; margin: 0 auto; height: 500px; position: relative;}
+        #container form {position: absolute; top: 20%; left: 20%;}
+        #container form p {padding: 0; margin: 0; color: #ffffff; font-size: 24px;}
+        #container form input {padding: 10px;width: 180px;}
+        body {background: #304254; position: relative; padding: 0; margin: 0;}
+        #container form input[type=text] {padding:5px; border:2px solid #ccc; -webkit-border-radius: 5px; border-radius: 5px;}
+    </style>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+	<body>
+		<div id="page-wrap">
+			<div id="container-top">
+				<div id="container">
+					<form action="signup" method="POST">
+					<h1><img src="https://i.imgur.com/jJxaQnp.png" alt="Smiley face"></h1><center>
+						<p>Team Name</p>
+						<input id="pw-1" type='text' name='t_name' maxlength="16"><br/><br/>
+						<p>Real Name</p>
+						<input id="pw-2" type='text' name='irn' maxlength="16"><br/><br/>
+						<input type="hidden" name="i" value="'">
+						<input type='submit' name='submit' value='sign up'><p></center>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
