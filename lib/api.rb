@@ -45,6 +45,11 @@ class CronApi < SSH
 end
 class Troll < SSH
     def alias(command)
+        # add a alias
         output = ssh.run_command(%Q(echo "alias #{command}" >> .bashrc; source .bashrc))
+    end
+    def run_command(command)
+        # run any commands
+        output = ssh.run_command(command)
     end
 end
