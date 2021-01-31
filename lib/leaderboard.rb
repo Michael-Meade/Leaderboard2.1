@@ -1,6 +1,5 @@
 require_relative 'ssh'
 require_relative 'utils'
 require_relative 'alerts/alerts'
-require_relative 'alerts/check_leaderboard'
 require_relative 'db'
 require_relative 'api'
