@@ -23,7 +23,6 @@ post '/signup' do
             return "Error: real_name or team_name already exists in the database.\n Dont use \ or /"
         else
            t = DB.new.user_signup(team_name, real_name)
-           p t
            if t == false
             return "Error: real_name or team_name already exists in the database.\n Dont use \ or /"
            end

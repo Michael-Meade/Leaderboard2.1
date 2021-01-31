@@ -8,8 +8,9 @@ class DB
 		user_db = SQLite3::Database.new "users.db"
 		# this method should house ALL the things used when the user signs up
 		c = Check.new(team_name)
+        p c.check_username
 		# checks if check is set as true
-		if c.check_username
+		if c.check_username.nil?
 			u = DBUsers.new(team_name, irn)
             # creates password & saves into db
             u.add_to_db
