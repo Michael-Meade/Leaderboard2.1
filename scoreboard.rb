@@ -20,9 +20,13 @@ post '/signup' do
         real_name = params[:irn]
         # making sure team_name AND real_name is not empty
         if team_name.empty? || real_name.empty? || team_name.include?("/") || team_name.include?("\\")
-            "Error: real_name or team_name already exists in the database.\n Dont use \ or /"
+            return "Error: real_name or team_name already exists in the database.\n Dont use \ or /"
         else
-           DB.new.user_signup(team_name, real_name)
+           t = DB.new.user_signup(team_name, real_name)
+           p t
+           if t == false
+            return "Error: real_name or team_name already exists in the database.\n Dont use \ or /"
+           end
            send_file "output/#{team_name}.txt", :filename => "#{team_name}.txt", :type => 'Application/octet-stream'        
         end
         # it wont redirect bc the send_file method ends it with a halt statment . which stops it from redirecting

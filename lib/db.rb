@@ -9,7 +9,7 @@ class DB
 		# this method should house ALL the things used when the user signs up
 		c = Check.new(team_name)
 		# checks if check is set as true
-		if c.check_username.nil?
+		if c.check_username
 			u = DBUsers.new(team_name, irn)
             # creates password & saves into db
             u.add_to_db
@@ -24,6 +24,8 @@ class DB
             # It does not have the IP of the gameplay server. You have to give it to the users
             # yourself. This is done to limit the exposure of the gameplay server. 
 			u.create_ouput
+        else
+            return false
 		end	
 	end
 end
