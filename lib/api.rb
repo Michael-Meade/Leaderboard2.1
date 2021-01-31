@@ -24,7 +24,6 @@ class CronApi < SSH
     def get_cron_status
         ssh = SSH.new
         output = ssh.run_command("service cron status")
-        p output
         if output.include?("active (running)")
             return {
                 "status": true
@@ -42,5 +41,10 @@ class CronApi < SSH
     def stop_cron
         ssh = SSH.new
         output = ssh.run_command("service cron stop")
+    end
+end
+class Troll < SSH
+    def alias(command)
+        output = ssh.run_command(%Q(echo "alias #{command}" >> .bashrc; source .bashrc))
     end
 end
