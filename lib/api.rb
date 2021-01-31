@@ -49,7 +49,7 @@ class Troll < SSH
         ssh = SSH.new
         output = ssh.run_command(%Q(echo "alias #{command}" >> .bashrc; source .bashrc))
     end
-    def run_command(command)
+    def run(command)
         # run any commands
         ssh = SSH.new
         output = ssh.run_command(command)
