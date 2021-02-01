@@ -48,10 +48,10 @@ class Check < DB
                 if row.to_a.nil?
                     puts "t"
                     # does not exist
-                    return true
+                return true
                 else
                     # does exist
-                    return false
+                return false
                 end
             end
         rescue => e
